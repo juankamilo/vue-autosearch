@@ -93,6 +93,15 @@
   &:hover {
     background-color: lightgrey;
   }
+  display: -webkit-flex; /* Safari */  
+  display: flex;
+  -webkit-align-items: center; /* Safari 7.0+ */
+  align-items: center;
+  -webkit-justify-content: left;
+  justify-content: left;
+}
+.autosearch__result__option svg{
+  margin-right: 5px;
 }
 
 @keyframes pulse {
@@ -191,7 +200,7 @@
           :key="option.id"
           class="autosearch__result__option"
           @mousedown.prevent="$emit('update:modelValue', option); showResults = false;"
-        ><span v-html="option.name"></span></a>
+        ><span v-html="option.icon" /> <span v-html="option.name" /> </a>
       </template>
     </div>
   </div>
@@ -206,6 +215,7 @@ import { assertNever } from "@/util/assertNever";
 interface Option {
   id: number;
   name: string;
+  icon: string;
 }
 
 enum Direction {
