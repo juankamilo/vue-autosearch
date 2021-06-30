@@ -5,6 +5,12 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+.h-6 {
+  height: 1.5rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
 </style>
 
 <template>
@@ -95,11 +101,12 @@ export default defineComponent({
         }, 500);
       });
     };
+    let icon_building = "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4\" /></svg>";
 
-    const options: Ref<{ id: number; name: string }[]> = ref([]);
+    const options: Ref<{ id: number; name: string; icon: string }[]> = ref([]);
     onMounted(() => {
       setTimeout(() => {
-        options.value = [{ id: 1, name: "first" }, { id: 2, name: "second" }, { id: 3, name: "third" }, { id: 4, name: "fourth" }, { id: 5, name: "fifth" }, { id: 6, name: "sixth" }, { id: 7, name: "seventh" }, { id: 8, name: "eight" }, { id: 9, name: "nenth" }, { id: 10, name: "tenth" }];
+        options.value = [{ id: 1, name: "<b>first</b>", icon: icon_building }, { id: 2, name: "second", icon: "" }, { id: 3, name: "third", icon: "" }, { id: 4, name: "fourth", icon: "" }, { id: 5, name: "fifth", icon: "" }, { id: 6, name: "sixth", icon: "" }, { id: 7, name: "seventh", icon: "" }, { id: 8, name: "eight", icon: "" }, { id: 9, name: "nenth", icon: "" }, { id: 10, name: "tenth", icon: "" }];
       }, 2000);
     });
 
